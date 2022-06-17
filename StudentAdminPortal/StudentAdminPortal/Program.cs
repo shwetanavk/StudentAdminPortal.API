@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<StudentAdminContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("StudentAdminPortalDB")));
 builder.Services.AddScoped<IStudentRepository, SqlStudentRepository>();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 
 
 var app = builder.Build();

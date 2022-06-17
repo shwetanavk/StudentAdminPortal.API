@@ -1,4 +1,4 @@
-﻿using StudentAdminPortal.API.DomainModel;
+﻿
 
 namespace StudentAdminPortal.DomainModels
 {

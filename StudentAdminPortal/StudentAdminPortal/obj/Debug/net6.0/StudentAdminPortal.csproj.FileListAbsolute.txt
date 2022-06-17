@@ -59,3 +59,8 @@ D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPor
 D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\obj\Debug\net6.0\StudentAdminPortal.pdb
 D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\obj\Debug\net6.0\StudentAdminPortal.genruntimeconfig.cache
 D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\obj\Debug\net6.0\ref\StudentAdminPortal.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\AutoMapper.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\Newtonsoft.Json.dll

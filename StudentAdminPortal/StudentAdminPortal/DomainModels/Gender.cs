@@ -1,4 +1,6 @@
-﻿namespace StudentAdminPortal.API.DomainModel
+﻿
+
+namespace StudentAdminPortal.DomainModels
 {
     public class Gender
     {        
