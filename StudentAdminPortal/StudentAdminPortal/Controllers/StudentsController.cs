@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentAdminPortal.API.Repositories;
 using StudentAdminPortal.DomainModels;
+using StudentAdminPortal.Repositories;
 
 namespace StudentAdminPortal.API.Controllers
 {
@@ -10,11 +11,12 @@ namespace StudentAdminPortal.API.Controllers
     {
         private readonly IStudentRepository studentRepository;
         private readonly IMapper mapper;
-
-        public StudentsController(IStudentRepository studentRepository, IMapper mapper)
+        private readonly IImageRepository imageRepository;
+        public StudentsController(IStudentRepository studentRepository, IMapper mapper, IImageRepository imageRepository)
         {
             this.studentRepository = studentRepository;
             this.mapper = mapper;
+            this.imageRepository = imageRepository;
         }
 
         [HttpGet]
@@ -61,7 +63,8 @@ namespace StudentAdminPortal.API.Controllers
 
         [HttpGet]
 
-        [Route("[controller]/{studentId:guid}")]
+        //[Route("[controller]/{studentId:guid}")]
+        [Route("[controller]/{studentId:guid}"), ActionName("GetStudentAsync")]
         public async Task<IActionResult> GetStudentsAsync([FromRoute] Guid studentId)
         {
             var student = await studentRepository.GetStudentAsync(studentId);
@@ -100,5 +103,54 @@ namespace StudentAdminPortal.API.Controllers
 
             return NotFound();
         }
+
+        [HttpPost]
+        [Route("[controller]/Add")]
+        public async Task<IActionResult> AddStudentAsync([FromBody] AddStudentRequest request)
+        {
+            var student = await studentRepository.AddStudent(mapper.Map<DataModels.Student>(request));
+            return CreatedAtAction(nameof(GetStudentsAsync), new { studentId = student.ID },
+                mapper.Map<Student>(student));
+        }
+
+
+        [HttpPost]
+        [Route("[controller]/{studentId:guid}/upload-image")]
+        public async Task<IActionResult> UploadImage([FromRoute] Guid studentId, IFormFile profileImage)
+        {
+            var validExtensions = new List<string>
+            {
+               ".jpeg",
+               ".png",
+               ".gif",
+               ".jpg"
+            };
+
+            if (profileImage != null && profileImage.Length > 0)
+            {
+                var extension = Path.GetExtension(profileImage.FileName);
+                if (validExtensions.Contains(extension))
+                {
+                    if (await studentRepository.Exists(studentId))
+                    {
+                        var fileName = Guid.NewGuid() + Path.GetExtension(profileImage.FileName);
+
+                        var fileImagePath = await imageRepository.Upload(profileImage, fileName);
+
+                        if (await studentRepository.UpdateProfileImage(studentId, fileImagePath))
+                        {
+                            return Ok(fileImagePath);
+                        }
+
+                        return StatusCode(StatusCodes.Status500InternalServerError, "Error uploading image");
+                    }
+                }
+
+                return BadRequest("This is not a valid Image format");
+            }
+
+            return NotFound();
+        }
     }
 }
+

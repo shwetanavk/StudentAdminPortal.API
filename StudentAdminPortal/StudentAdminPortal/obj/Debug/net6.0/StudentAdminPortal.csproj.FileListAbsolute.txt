@@ -64,3 +64,6 @@ D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPor
 D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\FluentValidation.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+D:\Study\FullStack\StudentAdminPortalJune\StudentAdminPortal.API\StudentAdminPortal\StudentAdminPortal\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
